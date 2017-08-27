@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",
-    "react": "^15.6.1"
+    "react": "^15.6.1",
+    "webpack": "^3.5.5"
   },
   "devDependencies": {
     "eslint": "^4.5.0"
