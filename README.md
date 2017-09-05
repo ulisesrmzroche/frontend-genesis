@@ -4,8 +4,6 @@
 
 This is my preferred front-end stack for new web apps.
 
-A Full-
-
 == Tech Stack ==
 
 Full-Stack JavaScript.
@@ -27,7 +25,7 @@ Full-Stack JavaScript.
 2. Run npm setup
 3. Run npm start
 
-Assuming everything went right, and this boilerplate is still relevant due to not living in a post-apocalypictic nuclear distopia, you my dear me, should see a hello world splash page when you go to http://localhost:8080.
+Assuming everything went right, and this boilerplate is still relevant due to not living in a post-apocalypictic nuclear distopia, you should see a hello world splash page when you go to http://localhost:8080.
 
 Open the postcard to see a wise saying and a funny gif. It will self-destruct in 10 seconds and leave you with a naked page after that.
 
