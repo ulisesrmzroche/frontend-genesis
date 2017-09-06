@@ -9,9 +9,10 @@ module.exports = {
   context: ENV.ROOT_PATH,
   entry: `${ENV.ROOT_PATH}/src/app`,
   output: {
-    path: `${ENV.ROOT_PATH}/dist/assets`,
-    filename: 'app.nahual-rpg-web.js',
-    publicPath: '/assets',
+    path: `${ENV.ROOT_PATH}/dist/`,
+    filename: ENV.environment === 'production' ? 'app.[hash].js'
+                                               : `app.js`,
+    publicPath: '/',
   },
   devtool: 'inline-source-map',
   module: {
@@ -46,6 +47,9 @@ module.exports = {
       filename: 'index.html',
       inject: 'body',
       title: 'Frontend Genesis',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`,
     }),
   ],
 };

@@ -8,11 +8,12 @@ dotenv.load();
 module.exports = {
   context: ENV.ROOT_PATH,
   entry: {
-    api: `${ENV.ROOT_PATH}/src/index.js`,
+    api: `${ENV.ROOT_PATH}/src/server/index.js`,
   },
   output: {
     path: `${ENV.ROOT_PATH}/dist`,
-    filename: `${ENV.ENVIRONMENT}.estereobit-api.js`,
+    filename: ENV.environment === 'production' ? `server.[hash].js`
+                                               : `server.js`,
     publicPath: '/',
     libraryTarget: 'commonjs2',
   },
