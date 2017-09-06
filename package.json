@@ -2,16 +2,18 @@
   "name": "frontend-genesis",
   "version": "1.0.0",
   "description": "Custom boilerplate for front-end projects.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "yarn run build && node scripts/start",
+    "build": "node scripts/build",
+    "test": "node scripts/test"
   },
   "author": "ulisesrmzroche",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",
     "react": "^15.6.1",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-node-externals": "^1.6.0"
   },
   "devDependencies": {
     "eslint": "^4.5.0"
