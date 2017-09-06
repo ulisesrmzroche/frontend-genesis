@@ -1,22 +1,25 @@
 const webpack = require('webpack');
 const del = require('del');
 
-
 const appConfig = require('./../../config/app.webpack.config');
 const serverConfig = require('./../../config/server.webpack.config');
 
 const build = (config) => {
   return new Promise(function(resolve, reject) {
-    return webpack(config, (err, stats)=>{
+    webpack(config, (err, stats)=>{
       if (err) return reject(new Error(err));
-      return resolve();
+      console.log(stats);
+      resolve();
     });
   });
 }
 
 const buildServer = () => {
   console.log('Building Server...');
-  return build(serverConfig);
+  return build(serverConfig).then(()=>{
+    console.log('build server'); }).catch((e)=>{
+    console.log(e);
+  })
 }
 
 const buildApp = () => {
@@ -34,12 +37,14 @@ const cleanProject = () => {
   });
 }
 
-cleanProject().then(()=>{
-  buildApp().then(()=>{
-    buildServer();
-  }).catch((e)=>{
-    console.log(e);
-  })
-}).catch((e)=>{
-  console.log(e);
+
+cleanProject()
+.then(()=>{
+  return buildServer();
 })
+.then(()=>{
+  return buildApp();
+})
+.catch((e)=>{
+  console.log(e);
+});

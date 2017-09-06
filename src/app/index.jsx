@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './app';
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <App
+    user={window.currentUser || null}
+  />,
   document.getElementById('root')
 );

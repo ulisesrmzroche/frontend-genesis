@@ -1,5 +1,7 @@
 const Server = require('./../../dist/server').default;
-const WebApp = require('./../../dist/app').default;
-const server = new Server()
+
+const server = new Server({
+  port: 8080,
+});
 
 server.start();
