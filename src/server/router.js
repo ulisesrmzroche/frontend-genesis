@@ -3,7 +3,7 @@ import ENV from './../../config/environment';
 
 const router = express.Router();
 
-export default WebServerRouter = () => {
+export default () => {
 
   // Wildcard Route Handler //
   // This should go last
