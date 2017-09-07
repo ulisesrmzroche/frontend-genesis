@@ -1,10 +1,12 @@
-= Frontend Genesis =
+# Frontend Genesis #
 
 ![Image](/path/to/image)
 
 This is my preferred front-end stack for new web apps.
 
-== Tech Stack ==
+# Architecture
+
+## Tech Stack ##
 
 Full-Stack JavaScript.
 
@@ -12,14 +14,17 @@ Full-Stack JavaScript.
 
 * React
 * Express
-
-# Aux
-
 * Bootstrap
 
-== Dev ==
+# Features
 
-=== Installing ===
+* Hot Reload
+
+
+# Development #
+
+
+## Installing ##
 
 1. Git clone the app
 2. Run npm setup
