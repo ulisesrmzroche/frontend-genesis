@@ -8,8 +8,8 @@ dotenv.load();
 module.exports = {
   context: ENV.ROOT_PATH,
   entry: [
-    'webpack-hot-middleware/client',
     `${ENV.ROOT_PATH}/src/app`,
+    'webpack-hot-middleware/client',
   ],
   output: {
     path: `${ENV.ROOT_PATH}/dist/`,

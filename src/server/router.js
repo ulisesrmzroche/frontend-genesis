@@ -10,4 +10,5 @@ export default () => {
   router.get('*', (req, res)=>{
     res.sendFile(`${ENV.ROOT_PATH}/dist/index.html`);
   });
+  return router;
 }
