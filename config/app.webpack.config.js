@@ -7,7 +7,10 @@ dotenv.load();
 
 module.exports = {
   context: ENV.ROOT_PATH,
-  entry: `${ENV.ROOT_PATH}/src/app`,
+  entry: [
+    `${ENV.ROOT_PATH}/src/app`,
+    'webpack-hot-middleware/client',
+  ],
   output: {
     path: `${ENV.ROOT_PATH}/dist/`,
     filename: ENV.environment === 'production' ? 'app.[hash].js'
@@ -40,6 +43,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
+  devServer: {
+    contentBase: `${ENV.ROOT_PATH}/dist`,
+    hot: true
+  },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
@@ -48,6 +55,7 @@ module.exports = {
       inject: 'body',
       title: 'Frontend Genesis',
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `"${process.env.NODE_ENV ? process.env.NODE_ENV : 'development'}"`,
     }),
